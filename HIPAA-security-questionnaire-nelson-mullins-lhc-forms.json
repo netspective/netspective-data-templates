@@ -1,0 +1,1787 @@
+window.formDef = {
+  "code": "Q-001",
+  "name": "Security CheckSheet",
+  "units": null,
+  "templateOptions": {
+    "obrHeader": false,
+    "hideUnits": true,
+    "hideHeader": true,
+    "allowMultipleEmptyRepeatingItems": false
+  },
+  "items": [
+    {
+      "question": "Please provide the details",
+      "header": true,
+      "hideUnits": true,
+      "questionCode": "token",
+      "localQuestionCode": "token",
+      "units": null,
+      "codingInstructions": "",
+      "copyrightNotice": null,
+      "items": [
+        {
+          "question": "Name",
+          "questionCode": "token-name",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "token-name",
+          "dataType": "ST",
+          "answerCardinality": {
+            "min": "1",
+            "max": "1"
+          }
+        },
+        {
+          "question": "Email",
+          "questionCode": "token-email",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "token-email",
+          "dataType": "EMAIL"
+        },
+        {
+          "question": "Token",
+          "questionCode": "token-token",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "token-token",
+          "dataType": "ST"
+        }
+      ]
+    },
+    {
+      "question": "Type Of Entity",
+      "header": true,
+      "questionCode": "I",
+      "localQuestionCode": "I",
+      "units": null,
+      "codingInstructions": null,
+      "copyrightNotice": null,
+      "items": [
+        {
+          "question": "Are You Health Care Provider",
+          "questionCode": "I.a",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "I.a",
+          "dataType": "CNE",
+          "answers": [
+            {
+              "text": "Yes",
+              "code": "Y"
+            },
+            {
+              "text": "No",
+              "code": "N"
+            }
+          ],
+          "answerCardinality": {
+            "min": "1",
+            "max": "1"
+          }
+        },
+        {
+          "question": "Healthcare provider",
+          "header": true,
+          "hideUnits": true,
+          "questionCode": "I.a.HP",
+          "localQuestionCode": "I.a.HP",
+          "units": null,
+          "codingInstructions": null,
+          "copyrightNotice": null,
+          "skipLogic": {
+            "conditions": [
+              {
+                "source": "I.a",
+                "trigger": {
+                  "code": "Y"
+                }
+              }
+            ],
+            "action": "show"
+          },
+          "items": [
+            {
+              "question": "Are you a medical facility (hospital, nursing facility, etc.)? ",
+              "questionCode": "Q-I.1",
+              "header": false,
+              "hideUnits": false,
+              "noEmptyValue": true,
+              "localQuestionCode": "Q-I.1",
+              "dataType": "CNE",
+              "answers": [
+                {
+                  "text": "Yes",
+                  "code": "Y"
+                },
+                {
+                  "text": "No",
+                  "code": "N"
+                }
+              ],
+              "answerCardinality": {
+                "min": "1",
+                "max": "1"
+              }
+            },
+            {
+              "question": "Licensed Provider",
+              "header": true,
+              "hideUnits": true,
+              "questionCode": "Q-I.1-NO",
+              "localQuestionCode": "Q-I.1-NO",
+              "units": null,
+              "codingInstructions": null,
+              "copyrightNotice": null,
+              "skipLogic": {
+                "conditions": [
+                  {
+                    "source": "Q-I.1",
+                    "trigger": {
+                      "code": "N"
+                    }
+                  }
+                ],
+                "action": "show"
+              },
+              "items": [
+                {
+                  "question": "Are you an individual licensed provider of professional services, or a group of licensed providers (e.g., a physician, dentist, or professional corporation made up of such individuals)?",
+                  "questionCode": "Q-I.1-NO-a",
+                  "header": false,
+                  "hideUnits": false,
+                  "noEmptyValue": true,
+                  "localQuestionCode": "Q-I.1-NO-a",
+                  "dataType": "CNE",
+                  "answers": [
+                    {
+                      "text": "Yes",
+                      "code": "Y"
+                    },
+                    {
+                      "text": "No",
+                      "code": "N"
+                    }
+                  ],
+                  "answerCardinality": {
+                    "min": "1",
+                    "max": "1"
+                  }
+                },
+                {
+                  "question": "Do you have a direct treatment relationship with your patients, or are your patients referred to you from another provider? (e.g., an anesthesiologist or radiologist would not have a direct treatment relationship.)",
+                  "questionCode": "Q-I.1-NO-a-Y",
+                  "header": false,
+                  "hideUnits": false,
+                  "noEmptyValue": true,
+                  "localQuestionCode": "Q-I.1-NO-a-Y",
+                  "skipLogic": {
+                    "conditions": [
+                      {
+                        "source": "Q-I.1-NO-a",
+                        "trigger": {
+                          "code": "Y"
+                        }
+                      }
+                    ],
+                    "action": "show"
+                  },
+                  "dataType": "CNE",
+                  "answers": [
+                    {
+                      "text": "Direct",
+                      "code": "D"
+                    },
+                    {
+                      "text": "Indirect",
+                      "code": "I"
+                    }
+                  ],
+                  "answerCardinality": {
+                    "min": "1",
+                    "max": "1"
+                  }
+                },
+                {
+                  "question": "What sort of provider are you? (e.g. home health agency, staffing pool, etc.)",
+                  "questionCode": "Q-I.1-NO-a-N",
+                  "header": false,
+                  "hideUnits": false,
+                  "noEmptyValue": true,
+                  "localQuestionCode": "Q-I.1-NO-a-N",
+                  "skipLogic": {
+                    "conditions": [
+                      {
+                        "source": "Q-I.1-NO-a",
+                        "trigger": {
+                          "code": "N"
+                        }
+                      }
+                    ],
+                    "action": "show"
+                  },
+                  "dataType": "ST"
+                }
+              ]
+            },
+            {
+              "question": "Medical Facility",
+              "header": true,
+              "hideUnits": true,
+              "questionCode": "Q-I.1-YES",
+              "localQuestionCode": "Q-I.1-YES",
+              "units": null,
+              "codingInstructions": null,
+              "copyrightNotice": null,
+              "skipLogic": {
+                "conditions": [
+                  {
+                    "source": "Q-I.1",
+                    "trigger": {
+                      "code": "Y"
+                    }
+                  }
+                ],
+                "action": "show"
+              },
+              "items": [
+                {
+                  "question": "What sort of provider are you? (e.g. home health agency, staffing pool, etc.)",
+                  "questionCode": "Q-I.1-Yes",
+                  "header": false,
+                  "hideUnits": false,
+                  "noEmptyValue": true,
+                  "localQuestionCode": "Q-I.1-Yes",
+                  "dataType": "ST"
+                }
+              ]
+            },
+            {
+              "question": "Do you provide psychological counseling involving the taking of psychological notes ?",
+              "questionCode": "Q-I.2",
+              "header": false,
+              "hideUnits": false,
+              "noEmptyValue": true,
+              "localQuestionCode": "Q-I.2",
+              "dataType": "CNE",
+              "answers": [
+                {
+                  "text": "Yes",
+                  "code": "Y"
+                },
+                {
+                  "text": "No",
+                  "code": "N"
+                }
+              ],
+              "answerCardinality": {
+                "min": "1",
+                "max": "1"
+              }
+            },
+            {
+              "question": "Do you provide emergency care?",
+              "questionCode": "Q-I.3",
+              "header": false,
+              "hideUnits": false,
+              "noEmptyValue": true,
+              "localQuestionCode": "Q-I.3",
+              "dataType": "CNE",
+              "answers": [
+                {
+                  "text": "Yes",
+                  "code": "Y"
+                },
+                {
+                  "text": "No",
+                  "code": "N"
+                }
+              ],
+              "answerCardinality": {
+                "min": "1",
+                "max": "1"
+              }
+            },
+            {
+              "question": "Are you part of either of the following types of 'Organized Health Care Arrangements' ('OHCA')?",
+              "questionCode": "Q-I.4",
+              "header": false,
+              "hideUnits": false,
+              "noEmptyValue": true,
+              "localQuestionCode": "Q-I.4",
+              "dataType": "CNE",
+              "answers": [
+                {
+                  "text": "A clinically integrated care setting in which individuals typically receive health care from more than one health care provider (e.g., a hospital or a provider who provides services in a hospital)",
+                  "code": "clinically_integrated_care_setting"
+                },
+                {
+                  "text": "An organized system of healthcare where all the covered entities hold themselves out to the public as participating in a join arrangement and participate in UR, QA, or payment activities involving the sharing of financial risk",
+                  "code": "organized_system_of_healthcare"
+                }
+              ],
+              "answerCardinality": {
+                "min": "1",
+                "max": "1"
+              }
+            },
+            {
+              "question": "Are you covered by CLIA?",
+              "questionCode": "Q-I.5",
+              "header": false,
+              "hideUnits": false,
+              "noEmptyValue": true,
+              "localQuestionCode": "Q-I.5",
+              "dataType": "CNE",
+              "answers": [
+                {
+                  "text": "Yes",
+                  "code": "Y"
+                },
+                {
+                  "text": "No",
+                  "code": "N"
+                }
+              ],
+              "answerCardinality": {
+                "min": "1",
+                "max": "1"
+              }
+            },
+            {
+              "question": "Are you a public health authority? (An agency or authority in the US (federal, state, local, an Indian tribe, or any subdivision), or a person or entity acting under authority of an agency or authority, that is responsible for public health matters as part of its official mandate.)",
+              "questionCode": "Q-I.6",
+              "header": false,
+              "hideUnits": false,
+              "noEmptyValue": true,
+              "localQuestionCode": "Q-I.6",
+              "dataType": "CNE",
+              "answers": [
+                {
+                  "text": "Yes",
+                  "code": "Y"
+                },
+                {
+                  "text": "No",
+                  "code": "N"
+                }
+              ],
+              "answerCardinality": {
+                "min": "1",
+                "max": "1"
+              }
+            },
+            {
+              "question": "Do you perform research?",
+              "questionCode": "Q-I.7",
+              "header": false,
+              "hideUnits": false,
+              "noEmptyValue": true,
+              "localQuestionCode": "Q-I.7",
+              "dataType": "CNE",
+              "answers": [
+                {
+                  "text": "Yes",
+                  "code": "Y"
+                },
+                {
+                  "text": "No",
+                  "code": "N"
+                }
+              ],
+              "answerCardinality": {
+                "min": "1",
+                "max": "1"
+              }
+            },
+            {
+              "question": "Does the research involve collecting, accessing, analyzing, using or disclosing health information that identifies individuals?",
+              "questionCode": "Q-I.7.a",
+              "header": false,
+              "hideUnits": false,
+              "noEmptyValue": true,
+              "skipLogic": {
+                "conditions": [
+                  {
+                    "source": "Q-I.7",
+                    "trigger": {
+                      "code": "Y"
+                    }
+                  }
+                ],
+                "action": "show"
+              },
+              "localQuestionCode": "Q-I.7.a",
+              "dataType": "CNE",
+              "answers": [
+                {
+                  "text": "Yes",
+                  "code": "Y"
+                },
+                {
+                  "text": "No",
+                  "code": "N"
+                }
+              ],
+              "answerCardinality": {
+                "min": "1",
+                "max": "1"
+              }
+            },
+            {
+              "question": "Do you currently use a compound authorization that includes FDA-required language as well as HIPAA-required language?",
+              "questionCode": "Q-I.7.b",
+              "header": false,
+              "hideUnits": false,
+              "noEmptyValue": true,
+              "skipLogic": {
+                "conditions": [
+                  {
+                    "source": "Q-I.7.a",
+                    "trigger": {
+                      "code": "Y"
+                    }
+                  }
+                ],
+                "action": "show"
+              },
+              "localQuestionCode": "Q-I.7.b",
+              "dataType": "CNE",
+              "answers": [
+                {
+                  "text": "Compound",
+                  "code": "C"
+                },
+                {
+                  "text": "Seperate",
+                  "code": "S"
+                },
+                {
+                  "text": "None",
+                  "code": "N"
+                }
+              ],
+              "answerCardinality": {
+                "min": "1",
+                "max": "1"
+              }
+            },
+            {
+              "question": "What is the function of the system?",
+              "questionCode": "Q-I.7.b.more",
+              "header": false,
+              "hideUnits": false,
+              "noEmptyValue": true,
+              "localQuestionCode": "Q-I.7.b.more",
+              "skipLogic": {
+                "conditions": [
+                  {
+                    "source": "Q-I.7.b",
+                    "trigger": {
+                      "code": "N"
+                    }
+                  }
+                ],
+                "action": "show"
+              },
+              "dataType": "TX"
+            }
+          ]
+        },
+        {
+          "question": "Are you affiliated with, or have common ownership with, another covered entity?",
+          "questionCode": "I.b",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "I.b",
+          "dataType": "CNE",
+          "answers": [
+            {
+              "text": "Yes",
+              "code": "Y"
+            },
+            {
+              "text": "No",
+              "code": "N"
+            }
+          ],
+          "answerCardinality": {
+            "min": "1",
+            "max": "1"
+          }
+        },
+        {
+          "questionCode": "I.c",
+          "localQuestionCode": "I.c",
+          "dataType": "CNE",
+          "header": false,
+          "units": null,
+          "codingInstructions": null,
+          "copyrightNotice": null,
+          "questionCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "question": "Are you a business associate? I.e., do you collect, access, use or disclose protected health information on behalf of a covered entity?",
+          "answers": [
+            {
+              "label": null,
+              "text": "Yes",
+              "code": "Y"
+            },
+            {
+              "label": null,
+              "text": "No",
+              "code": "N"
+            }
+          ],
+          "skipLogic": null,
+          "restrictions": null,
+          "editable": null,
+          "defaultAnswer": null,
+          "formatting": null,
+          "calculationMethod": null,
+          "items": null,
+          "displayControl": {
+            "questionLayout": "horizontal",
+            "answerLayout": {
+              "type": "RADIO_CHECKBOX",
+              "columns": "2"
+            }
+          }
+        },
+        {
+          "questionCode": "I.d",
+          "localQuestionCode": "I.d",
+          "dataType": "CNE",
+          "header": false,
+          "units": null,
+          "codingInstructions": null,
+          "copyrightNotice": null,
+          "questionCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "1",
+            "max": "2"
+          },
+          "question": "Do you maintain any of the following protected health information:",
+          "answers": [
+            {
+              "label": null,
+              "text": "An external policy or notice to the public, users, or customers, describing how you protect the security and privacy of data",
+              "code": "Y"
+            },
+            {
+              "label": null,
+              "text": "Enrollment, payment, claims adjudication, and/or case or medical management record systems?",
+              "code": "N"
+            }
+          ],
+          "skipLogic": null,
+          "restrictions": null,
+          "editable": null,
+          "defaultAnswer": null,
+          "formatting": null,
+          "calculationMethod": null,
+          "items": null,
+          "displayControl": {
+            "questionLayout": "horizontal",
+            "answerLayout": {
+              "type": "RADIO_CHECKBOX",
+              "columns": "2"
+            }
+          }
+        },
+        {
+          "questionCode": "I.e",
+          "localQuestionCode": "I.e",
+          "dataType": "CNE",
+          "header": false,
+          "units": null,
+          "codingInstructions": null,
+          "copyrightNotice": null,
+          "questionCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "question": "Do you de-identify protected health information (i.e., remove identifiers or otherwise take protected health information and make it unidentifiable)?",
+          "answers": [
+            {
+              "label": null,
+              "text": "For your own entity",
+              "code": "Y"
+            },
+            {
+              "label": null,
+              "text": "For another entity",
+              "code": "N"
+            }
+          ],
+          "skipLogic": null,
+          "restrictions": null,
+          "editable": null,
+          "defaultAnswer": null,
+          "formatting": null,
+          "calculationMethod": null,
+          "items": null,
+          "displayControl": {
+            "questionLayout": "horizontal",
+            "answerLayout": {
+              "type": "RADIO_CHECKBOX",
+              "columns": "2"
+            }
+          }
+        },
+        {
+          "questionCode": "I.f",
+          "localQuestionCode": "I.f",
+          "dataType": "CNE",
+          "header": false,
+          "units": null,
+          "codingInstructions": null,
+          "copyrightNotice": null,
+          "questionCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "question": "Do you aggregate protected health information (i.e., take PHI from more than one covered entity and combine them together)?",
+          "answers": [
+            {
+              "label": null,
+              "text": "Yes",
+              "code": "Y"
+            },
+            {
+              "label": null,
+              "text": "No",
+              "code": "N"
+            }
+          ],
+          "skipLogic": null,
+          "restrictions": null,
+          "editable": null,
+          "defaultAnswer": null,
+          "formatting": null,
+          "calculationMethod": null,
+          "items": null,
+          "displayControl": {
+            "questionLayout": "horizontal",
+            "answerLayout": {
+              "type": "RADIO_CHECKBOX",
+              "columns": "2"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "question": "Has PHI or is connected to a system that has PHI",
+      "questionCode": "II",
+      "header": true,
+      "hideUnits": false,
+      "noEmptyValue": true,
+      "localQuestionCode": "II",
+      "codingInstructions": "For each system (i.e., type of software or computer environment) that has PHI or is connected to a system that has PHI, provide the following:",
+      "items": [
+        {
+          "question": "What is the function of the system?",
+          "questionCode": "II. a",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "II.a",
+          "dataType": "TX"
+        },
+        {
+          "question": "How many records are on the system?",
+          "questionCode": "II. b",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "II. b",
+          "dataType": "ST"
+        },
+        {
+          "question": "What type of information is on the system? (e.g., SSN, Name, Address, etc.)",
+          "questionCode": "II. c",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "II. c",
+          "dataType": "ST"
+        },
+        {
+          "questionCode": "II.d",
+          "localQuestionCode": "II.d",
+          "dataType": "CNE",
+          "header": false,
+          "units": null,
+          "codingInstructions": null,
+          "copyrightNotice": null,
+          "questionCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "question": "Have you reviewed the security of the system and/or compliance with HIPAA?",
+          "answers": [
+            {
+              "label": null,
+              "text": "Yes",
+              "code": "Y"
+            },
+            {
+              "label": null,
+              "text": "No",
+              "code": "N"
+            }
+          ],
+          "skipLogic": null,
+          "restrictions": null,
+          "editable": null,
+          "defaultAnswer": null,
+          "formatting": null,
+          "calculationMethod": null,
+          "items": null,
+          "displayControl": {
+            "questionLayout": "horizontal",
+            "answerLayout": {
+              "type": "RADIO_CHECKBOX",
+              "columns": "2"
+            }
+          }
+        },
+        {
+          "question": "Add url of latest review document",
+          "questionCode": "II.d-Yes",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "II.d-Yes",
+          "skipLogic": {
+            "conditions": [
+              {
+                "source": "II.d",
+                "trigger": {
+                  "code": "Y"
+                }
+              }
+            ],
+            "action": "show"
+          },
+          "dataType": "ST"
+        },
+        {
+          "question": "Describe your audit controls",
+          "questionCode": "II. e",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "II. e",
+          "dataType": "TX"
+        },
+        {
+          "question": "To what other systems is it connected?",
+          "questionCode": "II. f",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "II. f",
+          "dataType": "ST"
+        },
+        {
+          "questionCode": "II.g",
+          "localQuestionCode": "II.g",
+          "dataType": "CNE",
+          "header": false,
+          "units": null,
+          "codingInstructions": null,
+          "copyrightNotice": null,
+          "questionCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "question": "Is it connected to the internet?",
+          "answers": [
+            {
+              "label": null,
+              "text": "Yes",
+              "code": "Y"
+            },
+            {
+              "label": null,
+              "text": "No",
+              "code": "N"
+            }
+          ],
+          "skipLogic": null,
+          "restrictions": null,
+          "editable": null,
+          "defaultAnswer": null,
+          "formatting": null,
+          "calculationMethod": null,
+          "items": null,
+          "displayControl": {
+            "questionLayout": "horizontal",
+            "answerLayout": {
+              "type": "RADIO_CHECKBOX",
+              "columns": "2"
+            }
+          }
+        },
+        {
+          "question": "Describe the security features on this system",
+          "questionCode": "II. h",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "II. h",
+          "dataType": "TX"
+        },
+        {
+          "question": "Add url of diagram if you have",
+          "questionCode": "II. ha",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "II.ha",
+          "dataType": "ST"
+        },
+        {
+          "questionCode": "II.i",
+          "localQuestionCode": "II.i",
+          "dataType": "CNE",
+          "header": false,
+          "units": null,
+          "codingInstructions": null,
+          "copyrightNotice": null,
+          "questionCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "question": "Are there any internal divisions within your system, e.g., virtual perimeters or hierarchies?",
+          "answers": [
+            {
+              "label": null,
+              "text": "Yes",
+              "code": "Y"
+            },
+            {
+              "label": null,
+              "text": "No",
+              "code": "N"
+            }
+          ],
+          "skipLogic": null,
+          "restrictions": null,
+          "editable": null,
+          "defaultAnswer": null,
+          "formatting": null,
+          "calculationMethod": null,
+          "items": null,
+          "displayControl": {
+            "questionLayout": "horizontal",
+            "answerLayout": {
+              "type": "RADIO_CHECKBOX",
+              "columns": "2"
+            }
+          }
+        },
+        {
+          "question": "Describe",
+          "questionCode": "II.i-more",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "II.i-more",
+          "skipLogic": {
+            "conditions": [
+              {
+                "source": "II.i",
+                "trigger": {
+                  "code": "Y"
+                }
+              }
+            ],
+            "action": "show"
+          },
+          "dataType": "TX"
+        },
+        {
+          "questionCode": "II.j",
+          "localQuestionCode": "II.j",
+          "dataType": "CNE",
+          "header": false,
+          "units": null,
+          "codingInstructions": null,
+          "copyrightNotice": null,
+          "questionCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "question": "Do you monitor log-in attempts?",
+          "answers": [
+            {
+              "label": null,
+              "text": "Yes",
+              "code": "Y"
+            },
+            {
+              "label": null,
+              "text": "No",
+              "code": "N"
+            }
+          ],
+          "skipLogic": null,
+          "restrictions": null,
+          "editable": null,
+          "defaultAnswer": null,
+          "formatting": null,
+          "calculationMethod": null,
+          "items": null,
+          "displayControl": {
+            "questionLayout": "horizontal",
+            "answerLayout": {
+              "type": "RADIO_CHECKBOX",
+              "columns": "2"
+            }
+          }
+        },
+        {
+          "question": "Describe",
+          "questionCode": "II.j-more",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "II.j-more",
+          "skipLogic": {
+            "conditions": [
+              {
+                "source": "II.j",
+                "trigger": {
+                  "code": "Y"
+                }
+              }
+            ],
+            "action": "show"
+          },
+          "dataType": "TX"
+        },
+        {
+          "questionCode": "II.k",
+          "localQuestionCode": "II.k",
+          "dataType": "CNE",
+          "header": false,
+          "units": null,
+          "codingInstructions": null,
+          "copyrightNotice": null,
+          "questionCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "question": "Do you utilize role-based access?",
+          "answers": [
+            {
+              "label": null,
+              "text": "Yes",
+              "code": "Y"
+            },
+            {
+              "label": null,
+              "text": "No",
+              "code": "N"
+            }
+          ],
+          "skipLogic": null,
+          "restrictions": null,
+          "editable": null,
+          "defaultAnswer": null,
+          "formatting": null,
+          "calculationMethod": null,
+          "items": null,
+          "displayControl": {
+            "questionLayout": "horizontal",
+            "answerLayout": {
+              "type": "RADIO_CHECKBOX",
+              "columns": "2"
+            }
+          }
+        },
+        {
+          "question": "Describe how this is done for each role",
+          "questionCode": "II.k-more",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "II.k-more",
+          "skipLogic": {
+            "conditions": [
+              {
+                "source": "II.k",
+                "trigger": {
+                  "code": "Y"
+                }
+              }
+            ],
+            "action": "show"
+          },
+          "dataType": "TX"
+        },
+        {
+          "question": "Describe any system for monitoring use of IT resources and access to PHI.",
+          "questionCode": "II.l",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "II.l",
+          "skipLogic": null,
+          "dataType": "TX"
+        },
+        {
+          "question": "Describe your virus control software and procedures for this system",
+          "questionCode": "II.m",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "II.m",
+          "skipLogic": null,
+          "dataType": "TX"
+        },
+        {
+          "question": "Describe, or attach your policy regarding, software patches and updates",
+          "questionCode": "II.n",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "II.n",
+          "skipLogic": null,
+          "dataType": "TX"
+        },
+        {
+          "questionCode": "II.o",
+          "localQuestionCode": "II.o",
+          "dataType": "CNE",
+          "header": false,
+          "units": null,
+          "codingInstructions": null,
+          "copyrightNotice": null,
+          "questionCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "question": " Does each person accessing this system have a unique user ID?",
+          "answers": [
+            {
+              "label": null,
+              "text": "Yes",
+              "code": "Y"
+            },
+            {
+              "label": null,
+              "text": "No",
+              "code": "N"
+            }
+          ],
+          "skipLogic": null,
+          "restrictions": null,
+          "editable": null,
+          "defaultAnswer": null,
+          "formatting": null,
+          "calculationMethod": null,
+          "items": null,
+          "displayControl": {
+            "questionLayout": "horizontal",
+            "answerLayout": {
+              "type": "RADIO_CHECKBOX",
+              "columns": "2"
+            }
+          }
+        },
+        {
+          "question": "How do you authenticate that the individual seeking access is the authorized individual?",
+          "questionCode": "II.p",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "II.p",
+          "skipLogic": null,
+          "dataType": "TX"
+        },
+        {
+          "question": "Describe your password management system (e.g., type of passwords permitted, how often updated, is updating mandatory by policy or software controls, etc.)",
+          "questionCode": "II.q",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "II.q",
+          "skipLogic": null,
+          "dataType": "TX"
+        },
+        {
+          "questionCode": "II.r",
+          "localQuestionCode": "II.r",
+          "dataType": "CNE",
+          "header": false,
+          "units": null,
+          "codingInstructions": null,
+          "copyrightNotice": null,
+          "questionCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "question": "Do any individuals share passwords?",
+          "answers": [
+            {
+              "label": null,
+              "text": "Yes",
+              "code": "Y"
+            },
+            {
+              "label": null,
+              "text": "No",
+              "code": "N"
+            }
+          ],
+          "skipLogic": null,
+          "restrictions": null,
+          "editable": null,
+          "defaultAnswer": null,
+          "formatting": null,
+          "calculationMethod": null,
+          "items": null,
+          "displayControl": {
+            "questionLayout": "horizontal",
+            "answerLayout": {
+              "type": "RADIO_CHECKBOX",
+              "columns": "2"
+            }
+          }
+        },
+        {
+          "questionCode": "II.s",
+          "localQuestionCode": "II.s",
+          "dataType": "CNE",
+          "header": false,
+          "units": null,
+          "codingInstructions": null,
+          "copyrightNotice": null,
+          "questionCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "question": "Do you have automatic log-out?",
+          "answers": [
+            {
+              "label": null,
+              "text": "Yes",
+              "code": "Y"
+            },
+            {
+              "label": null,
+              "text": "No",
+              "code": "N"
+            }
+          ],
+          "skipLogic": null,
+          "restrictions": null,
+          "editable": null,
+          "defaultAnswer": null,
+          "formatting": null,
+          "calculationMethod": null,
+          "items": null,
+          "displayControl": {
+            "questionLayout": "horizontal",
+            "answerLayout": {
+              "type": "RADIO_CHECKBOX",
+              "columns": "2"
+            }
+          }
+        },
+        {
+          "question": "how is this enforced?",
+          "questionCode": "II.s-more1",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "II.s-more1",
+          "skipLogic": {
+            "conditions": [
+              {
+                "source": "II.s",
+                "trigger": {
+                  "code": "Y"
+                }
+              }
+            ],
+            "action": "show"
+          },
+          "dataType": "TX"
+        },
+        {
+          "question": "How long a period of inactivity before log-out?",
+          "questionCode": "II.s-more2",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "II.s-more2",
+          "skipLogic": {
+            "conditions": [
+              {
+                "source": "II.s",
+                "trigger": {
+                  "code": "Y"
+                }
+              }
+            ],
+            "action": "show"
+          },
+          "dataType": "TX"
+        },
+        {
+          "questionCode": "II.t",
+          "localQuestionCode": "II.t",
+          "dataType": "CNE",
+          "header": false,
+          "units": null,
+          "codingInstructions": null,
+          "copyrightNotice": null,
+          "questionCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "question": "Is data on this system encrypted when at rest?",
+          "answers": [
+            {
+              "label": null,
+              "text": "Yes",
+              "code": "Y"
+            },
+            {
+              "label": null,
+              "text": "No",
+              "code": "N"
+            }
+          ],
+          "skipLogic": null,
+          "restrictions": null,
+          "editable": null,
+          "defaultAnswer": null,
+          "formatting": null,
+          "calculationMethod": null,
+          "items": null,
+          "displayControl": {
+            "questionLayout": "horizontal",
+            "answerLayout": {
+              "type": "RADIO_CHECKBOX",
+              "columns": "2"
+            }
+          }
+        },
+        {
+          "question": "Describe the type of encryption, standards used and the product used",
+          "questionCode": "II.t-more",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "II.t-more",
+          "skipLogic": {
+            "conditions": [
+              {
+                "source": "II.t",
+                "trigger": {
+                  "code": "Y"
+                }
+              }
+            ],
+            "action": "show"
+          },
+          "dataType": "TX"
+        },
+        {
+          "questionCode": "II.u",
+          "localQuestionCode": "II.u",
+          "dataType": "CNE",
+          "header": false,
+          "units": null,
+          "codingInstructions": null,
+          "copyrightNotice": null,
+          "questionCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "question": "Do you have any processes for confirming that data has not been altered or destroyed (e.g., digit checking)?",
+          "answers": [
+            {
+              "label": null,
+              "text": "Yes",
+              "code": "Y"
+            },
+            {
+              "label": null,
+              "text": "No",
+              "code": "N"
+            }
+          ],
+          "skipLogic": null,
+          "restrictions": null,
+          "editable": null,
+          "defaultAnswer": null,
+          "formatting": null,
+          "calculationMethod": null,
+          "items": null,
+          "displayControl": {
+            "questionLayout": "horizontal",
+            "answerLayout": {
+              "type": "RADIO_CHECKBOX",
+              "columns": "2"
+            }
+          }
+        },
+        {
+          "question": "Describe ",
+          "questionCode": "II.u-more",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "II.u-more",
+          "skipLogic": {
+            "conditions": [
+              {
+                "source": "II.u",
+                "trigger": {
+                  "code": "Y"
+                }
+              }
+            ],
+            "action": "show"
+          },
+          "dataType": "TX"
+        },
+        {
+          "question": "How do you confirm that data that is transmitted is not improperly modified?",
+          "questionCode": "II.v",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "II.v",
+          "skipLogic": null,
+          "dataType": "TX"
+        },
+        {
+          "questionCode": "II.w",
+          "localQuestionCode": "II.w",
+          "dataType": "CNE",
+          "header": false,
+          "units": null,
+          "codingInstructions": null,
+          "copyrightNotice": null,
+          "questionCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "question": "Do you encrypt data being transmitted?",
+          "answers": [
+            {
+              "label": null,
+              "text": "Yes",
+              "code": "Y"
+            },
+            {
+              "label": null,
+              "text": "No",
+              "code": "N"
+            }
+          ],
+          "skipLogic": null,
+          "restrictions": null,
+          "editable": null,
+          "defaultAnswer": null,
+          "formatting": null,
+          "calculationMethod": null,
+          "items": null,
+          "displayControl": {
+            "questionLayout": "horizontal",
+            "answerLayout": {
+              "type": "RADIO_CHECKBOX",
+              "columns": "2"
+            }
+          }
+        },
+        {
+          "question": "Describe the type of encryption, standards used and the product used ",
+          "questionCode": "II.w-more",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "II.w-more",
+          "skipLogic": {
+            "conditions": [
+              {
+                "source": "II.w",
+                "trigger": {
+                  "code": "Y"
+                }
+              }
+            ],
+            "action": "show"
+          },
+          "dataType": "TX"
+        }
+      ]
+    },
+    {
+      "question": "Virtual perimeters or other divisions between systems described above",
+      "header": true,
+      "hideUnits": true,
+      "questionCode": "III",
+      "localQuestionCode": "III",
+      "units": null,
+      "codingInstructions": null,
+      "copyrightNotice": null,
+      "items": [
+        {
+          "question": "Do you have virtual perimeters or other divisions between systems described above?",
+          "questionCode": "III.a",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "III.a",
+          "dataType": "CNE",
+          "answers": [
+            {
+              "text": "Yes",
+              "code": "Y"
+            },
+            {
+              "text": "No",
+              "code": "N"
+            }
+          ],
+          "answerCardinality": {
+            "min": "1",
+            "max": "1"
+          }
+        },
+        {
+          "question": "How? ",
+          "questionCode": "III.a-more",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "III.a-more",
+          "skipLogic": {
+            "conditions": [
+              {
+                "source": "III.a",
+                "trigger": {
+                  "code": "Y"
+                }
+              }
+            ],
+            "action": "show"
+          },
+          "dataType": "TX"
+        }
+      ]
+    },
+    {
+      "question": "Include any benchmarks utilized for involved policies or procedures.",
+      "header": true,
+      "questionCode": "IV",
+      "localQuestionCode": "IV",
+      "units": null,
+      "codingInstructions": null,
+      "copyrightNotice": null,
+      "items": [
+        {
+          "question": "If any of your answers to XV or XVI involved policies or procedures, how do you monitor and/or audit compliance with those policies? Include any benchmarks utilized.",
+          "questionCode": "IV. a",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "IV. a",
+          "dataType": "TX"
+        }
+      ]
+    },
+    {
+      "question": "Copy of your incident response",
+      "header": true,
+      "hideUnits": true,
+      "questionCode": "V",
+      "localQuestionCode": "V",
+      "units": null,
+      "codingInstructions": "Attach a copy of your incident response plan, if you have one.",
+      "copyrightNotice": null,
+      "items": [
+        {
+          "question": "Attach a copy of your incident response plan, if you have one.",
+          "questionCode": "V. a",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "V. a",
+          "dataType": "TX"
+        }
+      ]
+    },
+    {
+      "question": "Copy of your contingency plan",
+      "header": true,
+      "hideUnits": true,
+      "questionCode": "VI",
+      "localQuestionCode": "VI",
+      "units": null,
+      "codingInstructions": "Attach a copy of your contingency plan, if you have one.",
+      "copyrightNotice": null,
+      "items": [
+        {
+          "question": "Add of your contingency plan, if you have one",
+          "questionCode": "VI. a",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "VI. a",
+          "dataType": "TX"
+        },
+        {
+          "question": "If you have one, do you test and revise your contingency plan?",
+          "questionCode": "VI.b",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "VI.b",
+          "dataType": "CNE",
+          "answers": [
+            {
+              "text": "Yes",
+              "code": "Y"
+            },
+            {
+              "text": "No",
+              "code": "N"
+            }
+          ],
+          "answerCardinality": {
+            "min": "1",
+            "max": "1"
+          }
+        }
+      ]
+    },
+    {
+      "question": "Utilization of mobile devices other than those included above.",
+      "header": true,
+      "hideUnits": true,
+      "questionCode": "VII",
+      "localQuestionCode": "VII",
+      "units": null,
+      "codingInstructions": null,
+      "copyrightNotice": null,
+      "items": [
+        {
+          "question": "Do you utilize mobile devices other than those included  above?",
+          "questionCode": "VII.a",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "VII.a",
+          "dataType": "CNE",
+          "answers": [
+            {
+              "text": "Yes",
+              "code": "Y"
+            },
+            {
+              "text": "No",
+              "code": "N"
+            }
+          ],
+          "answerCardinality": {
+            "min": "1",
+            "max": "1"
+          }
+        }
+      ]
+    },
+    {
+      "question": "Physical access limitations",
+      "header": true,
+      "hideUnits": true,
+      "questionCode": "VIII",
+      "localQuestionCode": "VIII",
+      "units": null,
+      "codingInstructions": "Describe physical access limitations",
+      "copyrightNotice": null,
+      "items": [
+        {
+          "question": "In and around workstations",
+          "questionCode": "VIII. a",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "VIII. a",
+          "dataType": "ST"
+        },
+        {
+          "question": "In and around servers",
+          "questionCode": "VIII. b",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "VIII. b",
+          "dataType": "ST"
+        },
+        {
+          "question": "In and out of the office/facility",
+          "questionCode": "VIII. c",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "VIII. c",
+          "dataType": "ST"
+        },
+        {
+          "question": " Do you maintain maintenance records of equipment?",
+          "questionCode": "VIII.d",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "VIII.d",
+          "dataType": "CNE",
+          "answers": [
+            {
+              "text": "Yes",
+              "code": "Y"
+            },
+            {
+              "text": "No",
+              "code": "N"
+            }
+          ],
+          "answerCardinality": {
+            "min": "1",
+            "max": "1"
+          }
+        },
+        {
+          "question": " Do you maintain an inventory of all IT assets?",
+          "questionCode": "VIII.e",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "VIII.e",
+          "dataType": "CNE",
+          "answers": [
+            {
+              "text": "Yes",
+              "code": "Y"
+            },
+            {
+              "text": "No",
+              "code": "N"
+            }
+          ],
+          "answerCardinality": {
+            "min": "1",
+            "max": "1"
+          }
+        },
+        {
+          "question": "How do you handle re-using electronic media (e.g., thumb drives and disks)",
+          "questionCode": "VIII. f",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "VIII. f",
+          "dataType": "ST"
+        },
+        {
+          "question": " How do you dispose of PHI?",
+          "questionCode": "VIII.g",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "VIII.g",
+          "dataType": "CNE",
+          "answers": [
+            {
+              "text": "Electronic",
+              "code": "Y"
+            },
+            {
+              "text": "Physical",
+              "code": "N"
+            }
+          ],
+          "answerCardinality": {
+            "min": "1",
+            "max": "1"
+          }
+        }
+      ]
+    }
+  ]
+}
