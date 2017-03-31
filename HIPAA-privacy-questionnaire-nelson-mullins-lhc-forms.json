@@ -1,0 +1,2062 @@
+ window.formDef = {
+  "code": "Q-001",
+  "name": "Privacy CheckSheet",
+  "units": null,
+  "hideUnits": true,
+  "templateOptions": {
+    "obrHeader": false,
+    "hideHeader": true,
+    "allowMultipleEmptyRepeatingItems": false,
+    "hideUnits": true
+  },
+  "items": [
+    {
+      "question": "Please provide the details",
+      "header": true,
+      "hideUnits": true,
+      "questionCode": "token",
+      "localQuestionCode": "token",
+      "units": null,
+      "codingInstructions": "",
+      "copyrightNotice": null,
+      "items": [
+        {
+          "question": "Name",
+          "questionCode": "token-name",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "token-name",
+          "dataType": "ST",
+          "answerCardinality": {
+            "min": "1",
+            "max": "1"
+          }
+        },
+        {
+          "question": "Email",
+          "questionCode": "token-email",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "token-email",
+          "dataType": "EMAIL"
+        },
+        {
+          "question": "Token",
+          "questionCode": "token-token",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "token-token",
+          "dataType": "ST"
+        }
+      ]
+    },
+    {
+      "question": "From whom you receive or access or for whom you collect",
+      "header": true,
+      "hideUnits": true,
+      "questionCode": "I",
+      "localQuestionCode": "I",
+      "units": null,
+      "codingInstructions": "For each entity from whom you receive or access, or for whom you collect, protected health information, provide the following information",
+      "copyrightNotice": null,
+      "items": [
+        {
+          "question": "Name",
+          "questionCode": "pr. a",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "pr.a",
+          "dataType": "ST"
+        },
+        {
+          "question": "Type Of Entity?",
+          "questionCode": "pr. toe",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "pr.toe",
+          "dataType": "ST"
+        },
+        {
+          "question": "Is this a Covered Entity?",
+          "questionCode": "pr.a",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "pr.a",
+          "dataType": "CNE",
+          "answers": [
+            {
+              "text": "Yes",
+              "code": "Y"
+            },
+            {
+              "text": "No",
+              "code": "N"
+            }
+          ],
+          "answerCardinality": {
+            "min": "1",
+            "max": "1"
+          }
+        },
+        {
+          "question": "Is this a business associate?",
+          "questionCode": "pr.be",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "pr.be",
+          "dataType": "CNE",
+          "answers": [
+            {
+              "text": "Yes",
+              "code": "Y"
+            },
+            {
+              "text": "No",
+              "code": "N"
+            }
+          ],
+          "answerCardinality": {
+            "min": "1",
+            "max": "1"
+          }
+        },
+        {
+          "question": " Is this part of an Organized Health Care Arrangement?",
+          "questionCode": "pr.oha",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "pr.oha",
+          "dataType": "CNE",
+          "answers": [
+            {
+              "text": "Yes",
+              "code": "Y"
+            },
+            {
+              "text": "No",
+              "code": "N"
+            }
+          ],
+          "answerCardinality": {
+            "min": "1",
+            "max": "1"
+          }
+        },
+        {
+          "question": "Address and contact information",
+          "questionCode": "pr.address",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "pr.address",
+          "dataType": "TX"
+        }
+      ]
+    },
+    {
+      "question": "Purpose of collection/access/receipt of PHI",
+      "questionCode": "pr.purpose",
+      "header": false,
+      "hideUnits": false,
+      "noEmptyValue": true,
+      "localQuestionCode": "pr.purpose",
+      "dataType": "ST"
+    },
+    {
+      "question": "Describe the type of information you receive",
+      "questionCode": "pr.describeinfo",
+      "header": false,
+      "hideUnits": false,
+      "noEmptyValue": true,
+      "localQuestionCode": "pr.describeinfo",
+      "dataType": "TX"
+    },
+    {
+      "question": "For each type of information you receive, what do you do with it?",
+      "questionCode": "pr.receive",
+      "header": false,
+      "hideUnits": false,
+      "noEmptyValue": true,
+      "localQuestionCode": "pr.receive",
+      "dataType": "TX"
+    },
+    {
+      "question": "Add url of Agreements data sharing with, or for, the entity",
+      "questionCode": "pr.addurl",
+      "header": false,
+      "hideUnits": false,
+      "noEmptyValue": true,
+      "codingInstructions": "Attach any agreements for data sharing with, or for, the entity (e.g., business associate agreement, data use agreement, authorizations, etc.). If this involves authorizations or another type of document that you collect from numerous individuals, attach the form template",
+      "localQuestionCode": "pr.addurl",
+      "dataType": "TX"
+    },
+    {
+      "question": "To whom you send or allow access to PHI, or who collects PHI on your behalf",
+      "header": true,
+      "hideUnits": true,
+      "questionCode": "II",
+      "localQuestionCode": "II",
+      "units": null,
+      "codingInstructions": "For each entity to whom you send or allow access to PHI, or who collects PHI on your behalf, provide the following information",
+      "copyrightNotice": null,
+      "items": [
+        {
+          "question": "Name",
+          "questionCode": "II1",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "II1",
+          "dataType": "ST"
+        },
+        {
+          "question": "Type Of Entity?",
+          "questionCode": "II2",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "II2",
+          "dataType": "ST"
+        },
+        {
+          "question": "Is this a Covered Entity?",
+          "questionCode": "II3",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "II3",
+          "dataType": "CNE",
+          "answers": [
+            {
+              "text": "Yes",
+              "code": "Y"
+            },
+            {
+              "text": "No",
+              "code": "N"
+            }
+          ],
+          "answerCardinality": {
+            "min": "1",
+            "max": "1"
+          }
+        },
+        {
+          "question": " Is this a business associate?",
+          "questionCode": "II4",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "II4",
+          "dataType": "CNE",
+          "answers": [
+            {
+              "text": "Yes",
+              "code": "Y"
+            },
+            {
+              "text": "No",
+              "code": "N"
+            }
+          ],
+          "answerCardinality": {
+            "min": "1",
+            "max": "1"
+          }
+        },
+        {
+          "question": "Address and contact information",
+          "questionCode": "II5",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "II5",
+          "dataType": "TX"
+        },
+        {
+          "question": "Purpose of sharing of PHI",
+          "questionCode": "II6",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "II6",
+          "dataType": "TX"
+        },
+        {
+          "question": " Describe the type of information you send/allow access/have collected",
+          "questionCode": "II7",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "II7",
+          "dataType": "TX"
+        },
+        {
+          "question": "For each type of information, what does the entity do with it?",
+          "questionCode": "II8",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "II8",
+          "dataType": "ST"
+        },
+        {
+          "question": " Attach any agreements for data sharing with, or for, the entity (e.g., business associate agreement, data use agreement, authorizations, etc.). If this involves authorizations or another type of document that you collect from numerous individuals, attach the form template",
+          "questionCode": "II9",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "II9",
+          "dataType": "TX"
+        }
+      ]
+    },
+    {
+      "question": "Accept requests from individuals for restrictions on the use or disclosure of PHI",
+      "header": true,
+      "hideUnits": true,
+      "questionCode": "III",
+      "localQuestionCode": "III",
+      "units": null,
+      "codingInstructions": "For each entity to whom you send or allow access to PHI, or who collects PHI on your behalf, provide the following information",
+      "copyrightNotice": null,
+      "items": [
+        {
+          "question": "Do you accept requests from individuals for restrictions on the use or disclosure of PHI?",
+          "questionCode": "III1",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "III1",
+          "dataType": "CNE",
+          "answers": [
+            {
+              "text": "Yes",
+              "code": "Y"
+            },
+            {
+              "text": "No",
+              "code": "N"
+            }
+          ],
+          "answerCardinality": {
+            "min": "1",
+            "max": "1"
+          }
+        },
+        {
+          "question": "",
+          "header": true,
+          "hideUnits": true,
+          "questionCode": "IIISUB",
+          "localQuestionCode": "IIISUB",
+          "units": null,
+          "codingInstructions": null,
+          "copyrightNotice": null,
+          "skipLogic": {
+            "conditions": [
+              {
+                "source": "III1",
+                "trigger": {
+                  "code": "Y"
+                }
+              }
+            ],
+            "action": "show"
+          },
+          "items": [
+            {
+              "question": "Under What Circuimstances",
+              "questionCode": "IIISUB1",
+              "header": false,
+              "hideUnits": false,
+              "noEmptyValue": true,
+              "localQuestionCode": "IIISUB1",
+              "dataType": "TX"
+            },
+            {
+              "question": "What restrictions have you accepted?",
+              "questionCode": "IIISUB2",
+              "header": false,
+              "hideUnits": false,
+              "noEmptyValue": true,
+              "localQuestionCode": "IIISUB2",
+              "dataType": "TX"
+            }
+          ]
+        },
+        {
+          "question": "Do you communicate those restrictions to others (BAs, ACEs, others?)",
+          "questionCode": "III2",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "III2",
+          "dataType": "CNE",
+          "answers": [
+            {
+              "text": "Yes",
+              "code": "Y"
+            },
+            {
+              "text": "No",
+              "code": "N"
+            }
+          ],
+          "answerCardinality": {
+            "min": "1",
+            "max": "1"
+          }
+        },
+        {
+          "question": "",
+          "header": true,
+          "hideUnits": true,
+          "questionCode": "III2SUB",
+          "localQuestionCode": "III2SUB",
+          "units": null,
+          "codingInstructions": null,
+          "copyrightNotice": null,
+          "skipLogic": {
+            "conditions": [
+              {
+                "source": "III2",
+                "trigger": {
+                  "code": "Y"
+                }
+              }
+            ],
+            "action": "show"
+          },
+          "items": [
+            {
+              "question": "To whom and how?",
+              "questionCode": "III2SUB1",
+              "header": false,
+              "hideUnits": false,
+              "noEmptyValue": true,
+              "localQuestionCode": "III2SUB1",
+              "dataType": "TX"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "question": "Sell PHI or allow others to sell PHI that you collect or disclose",
+      "header": true,
+      "hideUnits": true,
+      "questionCode": "IV",
+      "localQuestionCode": "IV",
+      "units": null,
+      "copyrightNotice": null,
+      "items": [
+        {
+          "question": "Do you sell PHI or allow others to sell PHI that you collect or disclose?",
+          "questionCode": "IV1",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "IV1",
+          "dataType": "CNE",
+          "answers": [
+            {
+              "text": "Yes",
+              "code": "Y"
+            },
+            {
+              "text": "No",
+              "code": "N"
+            }
+          ],
+          "answerCardinality": {
+            "min": "1",
+            "max": "1"
+          }
+        },
+        {
+          "question": "",
+          "header": true,
+          "hideUnits": true,
+          "questionCode": "IV1SUB",
+          "localQuestionCode": "IV1SUB",
+          "units": null,
+          "codingInstructions": null,
+          "copyrightNotice": null,
+          "skipLogic": {
+            "conditions": [
+              {
+                "source": "IV1",
+                "trigger": {
+                  "code": "Y"
+                }
+              }
+            ],
+            "action": "show"
+          },
+          "items": [
+            {
+              "question": "To whom?",
+              "questionCode": "IV1SUB1",
+              "header": false,
+              "hideUnits": false,
+              "noEmptyValue": true,
+              "localQuestionCode": "IV1SUB1",
+              "dataType": "TX"
+            },
+            {
+              "question": "For what purpose?",
+              "questionCode": "IV1SUB2",
+              "header": false,
+              "hideUnits": false,
+              "noEmptyValue": true,
+              "localQuestionCode": "IV1SUB2",
+              "dataType": "TX"
+            },
+            {
+              "question": "Add url of any agreements for the sale of PHI",
+              "questionCode": "IV1SUB3",
+              "header": false,
+              "hideUnits": false,
+              "noEmptyValue": true,
+              "codingInstructions": "Attach any agreements for the sale of PHI.",
+              "localQuestionCode": "IV1SUB3",
+              "dataType": "TX"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "question": "Employees",
+      "header": true,
+      "hideUnits": true,
+      "questionCode": "V",
+      "localQuestionCode": "V",
+      "units": null,
+      "copyrightNotice": null,
+      "items": [
+        {
+          "question": "Do you have employees?",
+          "questionCode": "V1",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "V1",
+          "dataType": "CNE",
+          "answers": [
+            {
+              "text": "Yes",
+              "code": "Y"
+            },
+            {
+              "text": "No",
+              "code": "N"
+            }
+          ],
+          "answerCardinality": {
+            "min": "1",
+            "max": "1"
+          }
+        },
+        {
+          "question": "Employee",
+          "header": true,
+          "questionCardinality": {
+            "min": "1",
+            "max": "*"
+          },
+          "hideUnits": true,
+          "questionCode": "V1SUB",
+          "localQuestionCode": "V1SUB",
+          "units": null,
+          "codingInstructions": "",
+          "copyrightNotice": null,
+          "skipLogic": {
+            "conditions": [
+              {
+                "source": "V1",
+                "trigger": {
+                  "code": "Y"
+                }
+              }
+            ],
+            "action": "show"
+          },
+          "items": [
+            {
+              "question": "Type of employee",
+              "questionCode": "V1SUB1-type",
+              "header": false,
+              "hideUnits": false,
+              "noEmptyValue": true,
+              "localQuestionCode": "V1SUB1-type",
+              "dataType": "CWE",
+              "answerCardinality": {
+                "min": "1",
+                "max": "*"
+              }
+            },
+            {
+              "question": "a. Job Description",
+              "questionCode": "V1SUB1",
+              "header": false,
+              "hideUnits": false,
+              "noEmptyValue": true,
+              "localQuestionCode": "V1SUB1",
+              "dataType": "TX"
+            },
+            {
+              "question": "b. Does this job involve accessing, using, or disclosing PHI?",
+              "questionCode": "V1SUB2",
+              "header": false,
+              "hideUnits": false,
+              "noEmptyValue": true,
+              "localQuestionCode": "V1SUB2",
+              "dataType": "CNE",
+              "answers": [
+                {
+                  "text": "Yes",
+                  "code": "Y"
+                },
+                {
+                  "text": "No",
+                  "code": "N"
+                }
+              ],
+              "answerCardinality": {
+                "min": "1",
+                "max": "1"
+              }
+            },
+            {
+              "question": "i. Are there restrictions on which PHI the employee can access?",
+              "questionCode": "V1SUB2-1",
+              "header": false,
+              "hideUnits": false,
+              "noEmptyValue": true,
+              "skipLogic": {
+                "conditions": [
+                  {
+                    "source": "V1SUB2",
+                    "trigger": {
+                      "code": "Y"
+                    }
+                  }
+                ],
+                "action": "show"
+              },
+              "localQuestionCode": "V1SUB2-1",
+              "dataType": "CNE",
+              "answers": [
+                {
+                  "text": "Yes",
+                  "code": "Y"
+                },
+                {
+                  "text": "No",
+                  "code": "N"
+                }
+              ],
+              "answerCardinality": {
+                "min": "1",
+                "max": "1"
+              }
+            },
+            {
+              "question": "ii. Does this job involve treatment of individuals?",
+              "questionCode": "V1SUB2-2",
+              "header": false,
+              "hideUnits": false,
+              "noEmptyValue": true,
+              "skipLogic": {
+                "conditions": [
+                  {
+                    "source": "V1SUB2",
+                    "trigger": {
+                      "code": "Y"
+                    }
+                  }
+                ],
+                "action": "show"
+              },
+              "localQuestionCode": "V1SUB2-2",
+              "dataType": "CNE",
+              "answers": [
+                {
+                  "text": "Yes",
+                  "code": "Y"
+                },
+                {
+                  "text": "No",
+                  "code": "N"
+                }
+              ],
+              "answerCardinality": {
+                "min": "1",
+                "max": "1"
+              }
+            },
+            {
+              "question": "iii. Does this job involve payment operations (billing, collections, etc.)",
+              "questionCode": "V1SUB2-3",
+              "header": false,
+              "hideUnits": false,
+              "noEmptyValue": true,
+              "skipLogic": {
+                "conditions": [
+                  {
+                    "source": "V1SUB2",
+                    "trigger": {
+                      "code": "Y"
+                    }
+                  }
+                ],
+                "action": "show"
+              },
+              "localQuestionCode": "V1SUB2-3",
+              "dataType": "CNE",
+              "answers": [
+                {
+                  "text": "Yes",
+                  "code": "Y"
+                },
+                {
+                  "text": "No",
+                  "code": "N"
+                }
+              ],
+              "answerCardinality": {
+                "min": "1",
+                "max": "1"
+              }
+            },
+            {
+              "question": "iv. Does this job involve any of the following: quality assessment and improvement activities; reviewing the competence or qualifications of health care professionals; underwriting, enrollment, premium rating or other activities related to health insurance or benefit contracts; medical review; legal services; auditing functions; business planning and development; business management and general administrative activities; or creating de-identified health information?",
+              "questionCode": "V1SUB2-4",
+              "header": false,
+              "hideUnits": false,
+              "noEmptyValue": true,
+              "skipLogic": {
+                "conditions": [
+                  {
+                    "source": "V1SUB2",
+                    "trigger": {
+                      "code": "Y"
+                    }
+                  }
+                ],
+                "action": "show"
+              },
+              "localQuestionCode": "V1SUB2-4",
+              "dataType": "CNE",
+              "answers": [
+                {
+                  "text": "Yes",
+                  "code": "Y"
+                },
+                {
+                  "text": "No",
+                  "code": "N"
+                }
+              ],
+              "answerCardinality": {
+                "min": "1",
+                "max": "1"
+              }
+            },
+            {
+              "question": "c. Do you have a Security Officer?",
+              "questionCode": "V1SUB3",
+              "header": false,
+              "hideUnits": false,
+              "noEmptyValue": true,
+              "localQuestionCode": "V1SUB3",
+              "dataType": "CNE",
+              "answers": [
+                {
+                  "text": "Yes",
+                  "code": "Y"
+                },
+                {
+                  "text": "No",
+                  "code": "N"
+                }
+              ],
+              "answerCardinality": {
+                "min": "1",
+                "max": "1"
+              }
+            },
+            {
+              "question": "i. Name",
+              "questionCode": "V1SUB2-11",
+              "header": false,
+              "hideUnits": false,
+              "noEmptyValue": true,
+              "skipLogic": {
+                "conditions": [
+                  {
+                    "source": "V1SUB3",
+                    "trigger": {
+                      "code": "Y"
+                    }
+                  }
+                ],
+                "action": "show"
+              },
+              "localQuestionCode": "V1SUB2-11",
+              "dataType": "ST"
+            },
+            {
+              "question": "ii. Describe duties or attach a job description",
+              "questionCode": "V1SUB2-12",
+              "header": false,
+              "hideUnits": false,
+              "noEmptyValue": true,
+              "skipLogic": {
+                "conditions": [
+                  {
+                    "source": "V1SUB3",
+                    "trigger": {
+                      "code": "Y"
+                    }
+                  }
+                ],
+                "action": "show"
+              },
+              "localQuestionCode": "V1SUB2-12",
+              "dataType": "ST"
+            },
+            {
+              "question": "iii. Is this individual listed in any corporate minutes or on the company's website or other materials?",
+              "questionCode": "V1SUB2-13",
+              "header": false,
+              "hideUnits": false,
+              "noEmptyValue": true,
+              "skipLogic": {
+                "conditions": [
+                  {
+                    "source": "V1SUB3",
+                    "trigger": {
+                      "code": "Y"
+                    }
+                  }
+                ],
+                "action": "show"
+              },
+              "localQuestionCode": "V1SUB2-13",
+              "dataType": "CNE",
+              "answers": [
+                {
+                  "text": "Yes",
+                  "code": "Y"
+                },
+                {
+                  "text": "No",
+                  "code": "N"
+                }
+              ],
+              "answerCardinality": {
+                "min": "1",
+                "max": "1"
+              }
+            },
+            {
+              "question": "d. Do you have a Privacy Officer?",
+              "questionCode": "V1SUB4",
+              "header": false,
+              "hideUnits": false,
+              "noEmptyValue": true,
+              "localQuestionCode": "V1SUB4",
+              "dataType": "CNE",
+              "answers": [
+                {
+                  "text": "Yes",
+                  "code": "Y"
+                },
+                {
+                  "text": "No",
+                  "code": "N"
+                }
+              ],
+              "answerCardinality": {
+                "min": "1",
+                "max": "1"
+              }
+            },
+            {
+              "question": "i. Name",
+              "questionCode": "V1SUB4-11",
+              "header": false,
+              "hideUnits": false,
+              "noEmptyValue": true,
+              "skipLogic": {
+                "conditions": [
+                  {
+                    "source": "V1SUB4",
+                    "trigger": {
+                      "code": "Y"
+                    }
+                  }
+                ],
+                "action": "show"
+              },
+              "localQuestionCode": "V1SUB4-11",
+              "dataType": "ST"
+            },
+            {
+              "question": "i. Describe duties or attach a job description",
+              "questionCode": "V1SUB4-12",
+              "header": false,
+              "hideUnits": false,
+              "noEmptyValue": true,
+              "skipLogic": {
+                "conditions": [
+                  {
+                    "source": "V1SUB4",
+                    "trigger": {
+                      "code": "Y"
+                    }
+                  }
+                ],
+                "action": "show"
+              },
+              "localQuestionCode": "V1SUB4-12",
+              "dataType": "ST"
+            },
+            {
+              "question": "iii.  Is this individual listed in any corporate minutes or on the company's website or other materials?",
+              "questionCode": "V1SUB4-13",
+              "header": false,
+              "hideUnits": false,
+              "noEmptyValue": true,
+              "skipLogic": {
+                "conditions": [
+                  {
+                    "source": "V1SUB4",
+                    "trigger": {
+                      "code": "Y"
+                    }
+                  }
+                ],
+                "action": "show"
+              },
+              "localQuestionCode": "V1SUB4-13",
+              "dataType": "CNE",
+              "answers": [
+                {
+                  "text": "Yes",
+                  "code": "Y"
+                },
+                {
+                  "text": "No",
+                  "code": "N"
+                }
+              ],
+              "answerCardinality": {
+                "min": "1",
+                "max": "1"
+              }
+            },
+            {
+              "question": "e. Do you have other individuals who, as part of their jobs, are involved in oversight or implementation of compliance activities? Yes",
+              "questionCode": "V1SUB5",
+              "header": false,
+              "hideUnits": false,
+              "noEmptyValue": true,
+              "localQuestionCode": "V1SUB5",
+              "dataType": "CNE",
+              "answers": [
+                {
+                  "text": "Yes",
+                  "code": "Y"
+                },
+                {
+                  "text": "No",
+                  "code": "N"
+                }
+              ],
+              "answerCardinality": {
+                "min": "1",
+                "max": "1"
+              }
+            },
+            {
+              "question": "i. Provide or attach a job description",
+              "questionCode": "V1SUB5-11",
+              "header": false,
+              "hideUnits": false,
+              "noEmptyValue": true,
+              "skipLogic": {
+                "conditions": [
+                  {
+                    "source": "V1SUB5",
+                    "trigger": {
+                      "code": "Y"
+                    }
+                  }
+                ],
+                "action": "show"
+              },
+              "localQuestionCode": "V1SUB4-12",
+              "dataType": "TX"
+            },
+            {
+              "question": "f. Describe any policies, procedures, hardware, software, locks, doors, or other methods by which you limit employees, contractors or volunteers from accessing information that is confidential and/or unrelated to their job",
+              "questionCode": "V1SUB6",
+              "header": false,
+              "hideUnits": false,
+              "noEmptyValue": true,
+              "localQuestionCode": "V1SUB6",
+              "dataType": "TX"
+            },
+            {
+              "question": "g. Describe, or attach a description of, the on-boarding process for new employees",
+              "questionCode": "V1SUB7",
+              "header": false,
+              "hideUnits": false,
+              "noEmptyValue": true,
+              "localQuestionCode": "V1SUB7",
+              "dataType": "TX"
+            },
+            {
+              "question": "h. Do you undertake background checks?",
+              "questionCode": "V1SUB8",
+              "header": false,
+              "hideUnits": false,
+              "noEmptyValue": true,
+              "localQuestionCode": "V1SUB8",
+              "dataType": "CNE",
+              "answers": [
+                {
+                  "text": "Yes",
+                  "code": "Y"
+                },
+                {
+                  "text": "No",
+                  "code": "N"
+                }
+              ],
+              "answerCardinality": {
+                "min": "1",
+                "max": "1"
+              }
+            },
+            {
+              "question": "i. Add URL for the process for when an employee leaves or is terminated",
+              "questionCode": "V1SUB9",
+              "header": false,
+              "hideUnits": false,
+              "noEmptyValue": true,
+              "codingInstructions": "Describe, or attach a description of, the process for when an employee leaves or is terminated",
+              "localQuestionCode": "V1SUB9",
+              "dataType": "ST"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "question": "Have individuals that are independent contractors",
+      "header": true,
+      "hideUnits": true,
+      "questionCode": "VI",
+      "localQuestionCode": "VI",
+      "units": null,
+      "copyrightNotice": null,
+      "items": [
+        {
+          "question": "Do you have individuals that are independent contractors? If yes, for each type of contractor (i.e., each job function or job description), provide the following",
+          "questionCode": "V1-1",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "V1-1",
+          "dataType": "CNE",
+          "answers": [
+            {
+              "text": "Yes",
+              "code": "Y"
+            },
+            {
+              "text": "No",
+              "code": "N"
+            }
+          ],
+          "answerCardinality": {
+            "min": "1",
+            "max": "1"
+          }
+        },
+        {
+          "question": "Contractor",
+          "header": true,
+          "questionCardinality": {
+            "min": "1",
+            "max": "*"
+          },
+          "hideUnits": true,
+          "questionCode": "V1SamultiUB",
+          "localQuestionCode": "V1SamultiUB",
+          "units": null,
+          "codingInstructions": "",
+          "copyrightNotice": null,
+          "skipLogic": {
+            "conditions": [
+              {
+                "source": "V1-1",
+                "trigger": {
+                  "code": "Y"
+                }
+              }
+            ],
+            "action": "show"
+          },
+          "items": [
+            {
+              "question": "Type of Contractor",
+              "questionCode": "V1-1SUB1-type",
+              "header": false,
+              "hideUnits": false,
+              "noEmptyValue": true,
+              "localQuestionCode": "V1-1SUB1-type",
+              "skipLogic": {
+                "conditions": [
+                  {
+                    "source": "V1-1",
+                    "trigger": {
+                      "code": "Y"
+                    }
+                  }
+                ],
+                "action": "show"
+              },
+              "dataType": "CWE",
+              "answerCardinality": {
+                "min": "1",
+                "max": "*"
+              }
+            },
+            {
+              "question": "a.  Job Description",
+              "questionCode": "V1-sub-1",
+              "header": false,
+              "hideUnits": false,
+              "noEmptyValue": true,
+              "skipLogic": {
+                "conditions": [
+                  {
+                    "source": "V1-1",
+                    "trigger": {
+                      "code": "Y"
+                    }
+                  }
+                ],
+                "action": "show"
+              },
+              "localQuestionCode": "V1-sub-1",
+              "dataType": "ST",
+              "answerCardinality": {
+                "min": "1",
+                "max": "1"
+              }
+            },
+            {
+              "question": "b. Does this job involve accessing, using, or disclosing PHI?",
+              "questionCode": "V1-sub-2",
+              "header": false,
+              "hideUnits": false,
+              "noEmptyValue": true,
+              "skipLogic": {
+                "conditions": [
+                  {
+                    "source": "V1-1",
+                    "trigger": {
+                      "code": "Y"
+                    }
+                  }
+                ],
+                "action": "show"
+              },
+              "localQuestionCode": "V1-sub-2",
+              "dataType": "TX",
+              "answerCardinality": {
+                "min": "1",
+                "max": "1"
+              }
+            },
+            {
+              "question": "i. Are there restrictions on which PHI the contractor can access?",
+              "questionCode": "V1-sub-3",
+              "header": false,
+              "hideUnits": false,
+              "noEmptyValue": true,
+              "skipLogic": {
+                "conditions": [
+                  {
+                    "source": "V1-1",
+                    "trigger": {
+                      "code": "Y"
+                    }
+                  }
+                ],
+                "action": "show"
+              },
+              "localQuestionCode": "V1-sub-3",
+              "dataType": "CNE",
+              "answers": [
+                {
+                  "text": "Yes",
+                  "code": "Y"
+                },
+                {
+                  "text": "No",
+                  "code": "N"
+                }
+              ],
+              "answerCardinality": {
+                "min": "1",
+                "max": "1"
+              }
+            },
+            {
+              "question": "Describe the restrictions",
+              "questionCode": "V1-sub-113",
+              "header": false,
+              "hideUnits": false,
+              "noEmptyValue": true,
+              "skipLogic": {
+                "conditions": [
+                  {
+                    "source": "V1-sub-3",
+                    "trigger": {
+                      "code": "Y"
+                    }
+                  }
+                ],
+                "action": "show"
+              },
+              "localQuestionCode": "V1-sub-3dd",
+              "dataType": "TX"
+            },
+            {
+              "question": "How are these implemented (e.g., by policy, software access limitations, etc",
+              "questionCode": "V1-sub-114",
+              "header": false,
+              "hideUnits": false,
+              "noEmptyValue": true,
+              "skipLogic": {
+                "conditions": [
+                  {
+                    "source": "V1-sub-3",
+                    "trigger": {
+                      "code": "Y"
+                    }
+                  }
+                ],
+                "action": "show"
+              },
+              "localQuestionCode": "V1-sub-3dd",
+              "dataType": "TX"
+            },
+            {
+              "question": "ii.  Does this job involve treatment of individuals?",
+              "questionCode": "V1-sub-4",
+              "header": false,
+              "hideUnits": false,
+              "noEmptyValue": true,
+              "skipLogic": {
+                "conditions": [
+                  {
+                    "source": "V1-1",
+                    "trigger": {
+                      "code": "Y"
+                    }
+                  }
+                ],
+                "action": "show"
+              },
+              "localQuestionCode": "V1-sub-4",
+              "dataType": "CNE",
+              "answers": [
+                {
+                  "text": "Yes",
+                  "code": "Y"
+                },
+                {
+                  "text": "No",
+                  "code": "N"
+                }
+              ],
+              "answerCardinality": {
+                "min": "1",
+                "max": "1"
+              }
+            },
+            {
+              "question": "iii. Does this job involve payment operations (billing, collections, etc.) ?",
+              "questionCode": "V1-sub-5",
+              "header": false,
+              "hideUnits": false,
+              "noEmptyValue": true,
+              "skipLogic": {
+                "conditions": [
+                  {
+                    "source": "V1-1",
+                    "trigger": {
+                      "code": "Y"
+                    }
+                  }
+                ],
+                "action": "show"
+              },
+              "localQuestionCode": "V1-sub-5",
+              "dataType": "CNE",
+              "answers": [
+                {
+                  "text": "Yes",
+                  "code": "Y"
+                },
+                {
+                  "text": "No",
+                  "code": "N"
+                }
+              ],
+              "answerCardinality": {
+                "min": "1",
+                "max": "1"
+              }
+            },
+            {
+              "question": "iv. Does this job involve any of the following: quality assessment and improvement activities; reviewing the competence or qualifications of health care professionals; underwriting, enrollment, premium rating or other activities related to health insurance or benefit contracts; medical review; legal services; auditing functions; business planning and development; business management and general administrative activities; or creating de-identified health information?",
+              "questionCode": "V1-sub-6",
+              "header": false,
+              "hideUnits": false,
+              "noEmptyValue": true,
+              "skipLogic": {
+                "conditions": [
+                  {
+                    "source": "V1-1",
+                    "trigger": {
+                      "code": "Y"
+                    }
+                  }
+                ],
+                "action": "show"
+              },
+              "localQuestionCode": "V1-sub-6",
+              "dataType": "CNE",
+              "answers": [
+                {
+                  "text": "Yes",
+                  "code": "Y"
+                },
+                {
+                  "text": "No",
+                  "code": "N"
+                }
+              ],
+              "answerCardinality": {
+                "min": "1",
+                "max": "1"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "question": "Volunteers",
+      "header": true,
+      "hideUnits": true,
+      "questionCode": "VII",
+      "localQuestionCode": "VII",
+      "units": null,
+      "copyrightNotice": null,
+      "items": [
+        {
+          "question": "Do you have volunteers? __________ If yes, for each type of volunteer (i.e., each job function or job description), provide the following",
+          "questionCode": "V1I-1",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "V1I-1",
+          "dataType": "CNE",
+          "answers": [
+            {
+              "text": "Yes",
+              "code": "Y"
+            },
+            {
+              "text": "No",
+              "code": "N"
+            }
+          ],
+          "answerCardinality": {
+            "min": "1",
+            "max": "1"
+          }
+        },
+        {
+          "question": "Volunteers",
+          "header": true,
+          "questionCardinality": {
+            "min": "1",
+            "max": "*"
+          },
+          "hideUnits": true,
+          "questionCode": "V1SUdddB",
+          "localQuestionCode": "V1SddddUB",
+          "units": null,
+          "codingInstructions": "",
+          "copyrightNotice": null,
+          "skipLogic": {
+            "conditions": [
+              {
+                "source": "V1I-1",
+                "trigger": {
+                  "code": "Y"
+                }
+              }
+            ],
+            "action": "show"
+          },
+          "items": [
+            {
+              "question": "Type of Volunteer",
+              "questionCode": "V1SUB1ff-type",
+              "header": false,
+              "hideUnits": false,
+              "noEmptyValue": true,
+              "localQuestionCode": "V1SUB1ff-type",
+              "skipLogic": {
+                "conditions": [
+                  {
+                    "source": "V1I-1",
+                    "trigger": {
+                      "code": "Y"
+                    }
+                  }
+                ],
+                "action": "show"
+              },
+              "dataType": "CWE",
+              "answerCardinality": {
+                "min": "1",
+                "max": "*"
+              }
+            },
+            {
+              "question": "Activities undertaken?",
+              "questionCode": "VII-sub-1",
+              "header": false,
+              "hideUnits": false,
+              "noEmptyValue": true,
+              "skipLogic": {
+                "conditions": [
+                  {
+                    "source": "V1I-1",
+                    "trigger": {
+                      "code": "Y"
+                    }
+                  }
+                ],
+                "action": "show"
+              },
+              "localQuestionCode": "VII-sub-1",
+              "dataType": "TX"
+            },
+            {
+              "question": " Does this type of volunteer access, use, or disclose PHI?",
+              "questionCode": "VII-sub-2",
+              "header": false,
+              "hideUnits": false,
+              "noEmptyValue": true,
+              "skipLogic": {
+                "conditions": [
+                  {
+                    "source": "V1I-1",
+                    "trigger": {
+                      "code": "Y"
+                    }
+                  }
+                ],
+                "action": "show"
+              },
+              "localQuestionCode": "VII-sub-2",
+              "dataType": "CNE",
+              "answers": [
+                {
+                  "text": "Yes",
+                  "code": "Y"
+                },
+                {
+                  "text": "No",
+                  "code": "N"
+                }
+              ],
+              "answerCardinality": {
+                "min": "1",
+                "max": "1"
+              }
+            },
+            {
+              "question": "i. Are there restrictions on which PHI the volunteer can access?",
+              "questionCode": "VII-sub-21",
+              "header": false,
+              "hideUnits": false,
+              "noEmptyValue": true,
+              "skipLogic": {
+                "conditions": [
+                  {
+                    "source": "VII-sub-2",
+                    "trigger": {
+                      "code": "Y"
+                    }
+                  }
+                ],
+                "action": "show"
+              },
+              "localQuestionCode": "VII-sub-21",
+              "dataType": "CNE",
+              "answers": [
+                {
+                  "text": "Yes",
+                  "code": "Y"
+                },
+                {
+                  "text": "No",
+                  "code": "N"
+                }
+              ],
+              "answerCardinality": {
+                "min": "1",
+                "max": "1"
+              }
+            },
+            {
+              "question": "Describe the restrictions",
+              "questionCode": "VII-sub-21-1",
+              "header": false,
+              "hideUnits": false,
+              "noEmptyValue": true,
+              "skipLogic": {
+                "conditions": [
+                  {
+                    "source": "VII-sub-21",
+                    "trigger": {
+                      "code": "Y"
+                    }
+                  }
+                ],
+                "action": "show"
+              },
+              "localQuestionCode": "VII-sub-21-2",
+              "dataType": "TX"
+            },
+            {
+              "question": "How are these implemented (e.g., by policy, software access limitations, etc.)",
+              "questionCode": "VII-sub-21-2",
+              "header": false,
+              "hideUnits": false,
+              "noEmptyValue": true,
+              "skipLogic": {
+                "conditions": [
+                  {
+                    "source": "VII-sub-21",
+                    "trigger": {
+                      "code": "Y"
+                    }
+                  }
+                ],
+                "action": "show"
+              },
+              "localQuestionCode": "VII-sub-21-2",
+              "dataType": "TX"
+            },
+            {
+              "question": "ii. Does this type of volunteer treat individuals?",
+              "questionCode": "VII-sub-22",
+              "header": false,
+              "hideUnits": false,
+              "noEmptyValue": true,
+              "skipLogic": {
+                "conditions": [
+                  {
+                    "source": "VII-sub-2",
+                    "trigger": {
+                      "code": "Y"
+                    }
+                  }
+                ],
+                "action": "show"
+              },
+              "localQuestionCode": "VII-sub-22",
+              "dataType": "CNE",
+              "answers": [
+                {
+                  "text": "Yes",
+                  "code": "Y"
+                },
+                {
+                  "text": "No",
+                  "code": "N"
+                }
+              ],
+              "answerCardinality": {
+                "min": "1",
+                "max": "1"
+              }
+            },
+            {
+              "question": "iii. Does this type of volunteer get involved in payment operations (billing, collections, etc.)",
+              "questionCode": "VII-sub-23",
+              "header": false,
+              "hideUnits": false,
+              "noEmptyValue": true,
+              "skipLogic": {
+                "conditions": [
+                  {
+                    "source": "VII-sub-2",
+                    "trigger": {
+                      "code": "Y"
+                    }
+                  }
+                ],
+                "action": "show"
+              },
+              "localQuestionCode": "VII-sub-23",
+              "dataType": "CNE",
+              "answers": [
+                {
+                  "text": "Yes",
+                  "code": "Y"
+                },
+                {
+                  "text": "No",
+                  "code": "N"
+                }
+              ],
+              "answerCardinality": {
+                "min": "1",
+                "max": "1"
+              }
+            },
+            {
+              "question": "iv. Does this type of volunteer do any of the following: quality assessment and improvement activities; reviewing the competence or qualifications of health care professionals; underwriting, enrollment, premium rating or other activities related to health insurance or benefit contracts; medical review; legal services; auditing functions; business planning and development; business management and general administrative activities; or creating de-identified health information?",
+              "questionCode": "VII-sub-24",
+              "header": false,
+              "hideUnits": false,
+              "noEmptyValue": true,
+              "skipLogic": {
+                "conditions": [
+                  {
+                    "source": "VII-sub-2",
+                    "trigger": {
+                      "code": "Y"
+                    }
+                  }
+                ],
+                "action": "show"
+              },
+              "localQuestionCode": "VII-sub-24",
+              "dataType": "CNE",
+              "answers": [
+                {
+                  "text": "Yes",
+                  "code": "Y"
+                },
+                {
+                  "text": "No",
+                  "code": "N"
+                }
+              ],
+              "answerCardinality": {
+                "min": "1",
+                "max": "1"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "question": "Access PHI",
+      "header": true,
+      "hideUnits": true,
+      "questionCode": "VIII",
+      "localQuestionCode": "VIII",
+      "units": null,
+      "copyrightNotice": null,
+      "items": [
+        {
+          "question": "Add url of any policies you have regarding who may access PHI",
+          "questionCode": "V1II-1",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "codingInstructions": "Attach any policies you have regarding who may access PHI and how",
+          "localQuestionCode": "V1II-1",
+          "dataType": "ST"
+        },
+        {
+          "question": "How",
+          "questionCode": "V1II-2",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "V1II-2",
+          "dataType": "TX"
+        }
+      ]
+    },
+    {
+      "question": "Security of PHI",
+      "header": true,
+      "hideUnits": true,
+      "questionCode": "IX",
+      "localQuestionCode": "IX",
+      "units": null,
+      "copyrightNotice": null,
+      "items": [
+        {
+          "question": "Add url of any agreements for the sale of PHI.",
+          "questionCode": "IX-1",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "codingInstructions": "Attach any policies you have regarding the security of PHI.",
+          "localQuestionCode": "IX-1",
+          "dataType": "ST"
+        }
+      ]
+    },
+    {
+      "question": "Training provided to employees, volunteers",
+      "header": true,
+      "hideUnits": true,
+      "questionCode": "X",
+      "localQuestionCode": "X",
+      "units": null,
+      "copyrightNotice": null,
+      "items": [
+        {
+          "question": "Describe the training provided to employees, volunteers and/or contractors with regard to privacy and security of information.",
+          "questionCode": "X-1",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "X-1",
+          "dataType": "TX"
+        },
+        {
+          "question": "When, and how often, is the training undertaken?",
+          "questionCode": "X-2",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "X-2",
+          "dataType": "ST"
+        },
+        {
+          "question": "Do you keep a record of the training?",
+          "questionCode": "X-3",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "X-3",
+          "dataType": "CNE",
+          "answers": [
+            {
+              "text": "Yes",
+              "code": "Y"
+            },
+            {
+              "text": "No",
+              "code": "N"
+            }
+          ],
+          "answerCardinality": {
+            "min": "1",
+            "max": "1"
+          }
+        },
+        {
+          "question": "Is there a test at the end, or quizzes during, the training?",
+          "questionCode": "X-4",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "X-4",
+          "dataType": "CNE",
+          "answers": [
+            {
+              "text": "Yes",
+              "code": "Y"
+            },
+            {
+              "text": "No",
+              "code": "N"
+            }
+          ],
+          "answerCardinality": {
+            "min": "1",
+            "max": "1"
+          }
+        },
+        {
+          "question": "Are each individual's tests or scores retained?",
+          "questionCode": "X4-sub-1",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "skipLogic": {
+            "conditions": [
+              {
+                "source": "X-4",
+                "trigger": {
+                  "code": "Y"
+                }
+              }
+            ],
+            "action": "show"
+          },
+          "localQuestionCode": "X4-sub-1",
+          "dataType": "ST"
+        }
+      ]
+    },
+    {
+      "question": "Utilize PHI for marketing",
+      "header": true,
+      "hideUnits": true,
+      "questionCode": "XI",
+      "localQuestionCode": "XI",
+      "units": null,
+      "copyrightNotice": null,
+      "items": [
+        {
+          "question": "Do you utilize PHI for marketing (e.g., patient names and addresses used to send flyers or other advertising but not including refill reminders, or communications for treatment or operations, or case management/care coordination, unless you are paid for making such communication)?",
+          "questionCode": "XI-1",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "XI-1",
+          "dataType": "CNE",
+          "answers": [
+            {
+              "text": "Yes",
+              "code": "Y"
+            },
+            {
+              "text": "No",
+              "code": "N"
+            }
+          ],
+          "answerCardinality": {
+            "min": "1",
+            "max": "1"
+          }
+        },
+        {
+          "question": "a. Type of information used (e.g., name, address, diagnosis, referral source, etc)",
+          "questionCode": "XI-sub-1",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "skipLogic": {
+            "conditions": [
+              {
+                "source": "XI-1",
+                "trigger": {
+                  "code": "Y"
+                }
+              }
+            ],
+            "action": "show"
+          },
+          "localQuestionCode": "XI-sub-1",
+          "dataType": "TX"
+        },
+        {
+          "question": "b. Type of marketing",
+          "questionCode": "XI-sub-2",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "skipLogic": {
+            "conditions": [
+              {
+                "source": "XI-1",
+                "trigger": {
+                  "code": "Y"
+                }
+              }
+            ],
+            "action": "show"
+          },
+          "localQuestionCode": "XI-sub-2",
+          "dataType": "CNE",
+          "answers": [
+            {
+              "text": "face-to-face",
+              "code": "f-2-f"
+            },
+            {
+              "text": "mailing",
+              "code": "mailing"
+            },
+            {
+              "text": "Phone calls/fax/other voice or electronic medium",
+              "code": "ph-fax"
+            },
+            {
+              "text": "Do you collect an authorization from the individual receiving the marketing?",
+              "code": "auth-from-individuals"
+            }
+          ],
+          "answerCardinality": {
+            "min": "1",
+            "max": "4"
+          }
+        },
+        {
+          "question": "c. Do you collect an authorization from the individual receiving the marketing?",
+          "questionCode": "XI-sub-3",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "skipLogic": {
+            "conditions": [
+              {
+                "source": "XI-1",
+                "trigger": {
+                  "code": "Y"
+                }
+              }
+            ],
+            "action": "show"
+          },
+          "localQuestionCode": "XI-sub-3",
+          "dataType": "CNE",
+          "answers": [
+            {
+              "text": "Yes",
+              "code": "Y"
+            },
+            {
+              "text": "No",
+              "code": "N"
+            }
+          ],
+          "answerCardinality": {
+            "min": "1",
+            "max": "1"
+          }
+        },
+        {
+          "question": "How do you collect it?",
+          "questionCode": "XI-sub-31",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "skipLogic": {
+            "conditions": [
+              {
+                "source": "XI-sub-3",
+                "trigger": {
+                  "code": "Y"
+                }
+              }
+            ],
+            "action": "show"
+          },
+          "localQuestionCode": "XI-sub-31",
+          "dataType": "ST"
+        }
+      ]
+    },
+    {
+      "question": "Services to prisoners",
+      "header": true,
+      "hideUnits": true,
+      "questionCode": "XII",
+      "localQuestionCode": "XII",
+      "units": null,
+      "copyrightNotice": null,
+      "items": [
+        {
+          "question": "Do you provide services to prisoners?",
+          "questionCode": "XII-1",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "localQuestionCode": "XII-1",
+          "dataType": "TX"
+        }
+      ]
+    },
+    {
+      "question": "IT Systems",
+      "header": true,
+      "hideUnits": true,
+      "questionCode": "XIII",
+      "localQuestionCode": "XIII",
+      "units": null,
+      "copyrightNotice": null,
+      "items": [
+        {
+          "question": "List, in order of criticality, each system and each type of data",
+          "questionCode": "XIII-1",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "codingInstructions": "IT Systems",
+          "localQuestionCode": "XIII-1",
+          "dataType": "TX"
+        },
+        {
+          "question": "List, in order of criticality, each type of data.",
+          "questionCode": "XIII-2",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "codingInstructions": "",
+          "localQuestionCode": "XIII-2",
+          "dataType": "TX"
+        }
+      ]
+    },
+    {
+      "question": "Declaration",
+      "header": true,
+      "hideUnits": true,
+      "questionCode": "XIV",
+      "localQuestionCode": "XIV",
+      "units": null,
+      "copyrightNotice": null,
+      "items": [
+        {
+          "question": "I hereby declare that the above answers are true to the best of my knowledge and belief.",
+          "questionCode": "XIV-1",
+          "header": false,
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "multiselect": true,
+          "codingInstructions": "",
+          "localQuestionCode": "XIV-1",
+          "dataType": "ST"
+        }
+      ]
+    }
+  ]
+};
