@@ -1,9 +1,8 @@
-This repository maintains all Netspective Forms and templates. It is organized as follows:
+This repository maintains all Netspective Data Templates (Forms) for the DTMS microservice. It is organized as follows:
 
-- fully.qualified.domain [folder]
-  - Fully Qualified Name (formatted).lhc-forms.json [file]
-  - Fully Qualified Name 2.lhc-forms.json [file]
-  
-Example:
-- self-attest.opsfolio.com [folder]
-  - Name of Form (explanation).lhc-forms.json
+- netspective-data-templates (repo)
+  - realm (folder, one level)
+    - namespace (folder, hierarchical)
+      - namespace.meta-data.json
+      - Template Name.dataTemplateType.json (versioned)
+      - Template Name.meta-data.json (versioned, optional)
